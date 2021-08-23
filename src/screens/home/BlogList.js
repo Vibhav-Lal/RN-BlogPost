@@ -7,7 +7,6 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const BlogList = ({ navigation, blogData }) => {
     const [data, setData] = useState(blogData);
-    const [isLatest, setIsLatest] = useState(true);
 
     const onPress = (index) => {
         navigation.navigate('Blog', { index });
@@ -41,6 +40,7 @@ const BlogList = ({ navigation, blogData }) => {
 const BlogItem = ({ blog, onPress }) => {
     return (
         <TouchableOpacity
+            activeOpacity={0.6}
             onPress={() => onPress(blog.index)}
         >
             <Card>
@@ -49,6 +49,7 @@ const BlogItem = ({ blog, onPress }) => {
                 <View>
                     <Text style={styles.paragraph}>{blog.item.body.substring(0, 150)}</Text>
                 </View>
+                <Card.Divider />
                 <Text style={styles.date}>{blog.item.date}</Text>
             </Card>
         </TouchableOpacity>

@@ -36,9 +36,10 @@ const NewPost = ({ blogData, addBlog }) => {
                 onChangeText={text => setTitle(text)}
             />
             <Input
+                // style={{ textAlignVertical: 'top' }}
                 leftIcon={{ type: 'font-awesome', name: 'file-text-o' }}
                 multiline
-                numberOfLines={6}
+                numberOfLines={8}
                 name="body"
                 value={body}
                 placeholder="Write your post..."
