@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { View, Text, FlatList, StyleSheet } from 'react-native';
+import { View, Text, FlatList, StyleSheet, ImageBackground } from 'react-native';
 import { connect } from 'react-redux';
 import { Card } from 'react-native-elements';
 import { TouchableOpacity } from 'react-native-gesture-handler';
@@ -15,13 +15,19 @@ const BlogList = ({ navigation, blogData }) => {
         // item index seperators
         return (
             <View style={styles.cardContainer}>
-                <BlogItem blog={blog} onPress={onPress} />
+                <ImageBackground
+                    source={require('../../utils/pattern-bloglist.jpg')}
+                    resizeMode="cover"
+                    style={styles.image}
+                >
+                    <BlogItem blog={blog} onPress={onPress} />
+                </ImageBackground>
             </View>
         );
     };
 
     return (
-        <View>
+        <View style={styles.container}>
             <FlatList
                 data={data}
                 renderItem={renderItem}
@@ -47,6 +53,12 @@ const BlogItem = ({ blog, onPress }) => {
 };
 
 const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+    },
+    image: {
+        flex: 1,
+    },
     cardContainer: {
         alignItems: 'center',
         justifyContent: 'center',

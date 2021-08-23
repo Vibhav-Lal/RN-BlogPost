@@ -14,6 +14,7 @@ const Home = ({ navigation }) => {
         <Tab.Navigator
             screenOptions={{
                 headerTitleAlign: 'center',
+
             }}
         >
             <Tab.Screen

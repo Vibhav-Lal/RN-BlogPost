@@ -2,10 +2,9 @@
 
 import React, { useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { TextInput, TouchableOpacity } from 'react-native-gesture-handler';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 import { connect } from 'react-redux';
 import { addBlog } from '../../redux/actions/index';
-import Icon from 'react-native-vector-icons/FontAwesome';
 import { Input } from 'react-native-elements';
 
 const NewPost = ({ blogData, addBlog }) => {
@@ -70,15 +69,15 @@ const styles = StyleSheet.create({
         fontSize: 20,
     },
     submitBtn: {
-        backgroundColor: '#BDE551',
-        padding: 10,
+        backgroundColor: '#B5A95F',
+        padding: 5,
         margin: 15,
         height: 40,
         alignItems: 'center',
     },
     submitText: {
-        color: '#121211',
-        fontSize: 16,
+        color: '#FDFCF9',
+        fontSize: 20,
         fontWeight: 'bold',
     },
 });
