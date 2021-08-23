@@ -1,12 +1,14 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, FlatList, StyleSheet, ImageBackground } from 'react-native';
 import { connect } from 'react-redux';
 import { Card } from 'react-native-elements';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const BlogList = ({ navigation, blogData }) => {
-    const data = blogData;
+    const [data, setData] = useState(blogData);
+    const [isLatest, setIsLatest] = useState(true);
+
     const onPress = (index) => {
         navigation.navigate('Blog', { index });
     };
@@ -47,6 +49,7 @@ const BlogItem = ({ blog, onPress }) => {
                 <View>
                     <Text style={styles.paragraph}>{blog.item.body.substring(0, 150)}</Text>
                 </View>
+                <Text style={styles.date}>{blog.item.date}</Text>
             </Card>
         </TouchableOpacity>
     );
@@ -55,18 +58,21 @@ const BlogItem = ({ blog, onPress }) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        width: '100%',
     },
     image: {
         flex: 1,
+        width: '100%',
     },
     cardContainer: {
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#ecf0f1',
+        width: '100%',
     },
     title: {
         fontSize: 18,
-        color: 'black',
+        color: '#49410E',
     },
     paragraph: {
         marginTop: 0,
@@ -74,6 +80,9 @@ const styles = StyleSheet.create({
         fontSize: 16,
         textAlign: 'justify',
         color: 'black',
+    },
+    date: {
+        color: '#847A36',
     },
 });
 

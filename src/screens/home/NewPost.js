@@ -21,6 +21,7 @@ const NewPost = ({ blogData, addBlog }) => {
             id: id,
             title: title,
             body: body,
+            date: new Date().toLocaleString(),
         });
         alert('Post has been uploaded');
         setTitle('');

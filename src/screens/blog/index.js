@@ -18,9 +18,10 @@ const Blog = ({ route, navigation }) => {
                 <Card >
                     <View style={styles.baseText}>
                         <Card.Title style={styles.titleText}>{data.title}</Card.Title>
-                        <Card.Divider />
                         <Text style={styles.bodyText}>{data.body}</Text>
+                        <Card.Divider />
                     </View>
+                    <Text style={styles.date}>{data.date}</Text>
                 </Card>
             </ImageBackground>
         </View>
@@ -30,6 +31,9 @@ const Blog = ({ route, navigation }) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+    },
+    date: {
+        color: '#847A36',
     },
     baseText: {
         justifyContent: 'center',
@@ -44,12 +48,13 @@ const styles = StyleSheet.create({
         fontFamily: 'Cochin',
         padding: 5,
         textAlign: 'justify',
-        fontSize: 15,
+        fontSize: 18,
     },
     titleText: {
-        fontSize: 20,
+        fontSize: 24,
         fontWeight: 'bold',
         marginBottom: 5,
+        color: '#49410E',
     },
 });
 

@@ -21,7 +21,7 @@ const Home = ({ navigation }) => {
                 name="Posts"
                 component={BlogList}
                 options={{
-                    tabBarLabel: 'Home',
+                    tabBarLabel: 'Posts',
                     tabBarIcon: ({ size }) => (
                         <Ionicons name="home" color="#50542C" size={size} />
                     ),
