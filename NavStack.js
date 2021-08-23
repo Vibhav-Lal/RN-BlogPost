@@ -18,13 +18,15 @@ export default function NavStack() {
                 headerTintColor: '#282922',
                 headerTitleStyle: {
                     fontWeight: 'bold',
+                    fontSize: 25,
+                    fontFamily: 'cursive',
                 },
             }}
         >
             <Stack.Screen
-                name="Home"
+                name="My Blogpost"
                 component={Home}
-                options={{ title: 'Home' }}
+                options={{ title: 'My Blogpost' }}
             />
             <Stack.Screen
                 name="Blog"
