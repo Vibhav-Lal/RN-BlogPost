@@ -9,10 +9,10 @@ const Blog = ({ route, navigation }) => {
     const index = route.params.index;
     const data = blogData[index];
     return (
-        <Card>
+        <Card >
             <View style={styles.baseText}>
                 <Card.Title style={styles.titleText}>{data.title}</Card.Title>
-                {/* <Text style={styles.titleText}>{data.title}</Text> */}
+                <Card.Divider />
                 <Text style={styles.bodyText}>{data.body}</Text>
             </View>
         </Card>
@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     baseText: {
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 15,
+        paddingTop: 15,
     },
     bodyText: {
         fontFamily: 'Cochin',

@@ -5,6 +5,8 @@ import { View, Text, StyleSheet } from 'react-native';
 import { TextInput, TouchableOpacity } from 'react-native-gesture-handler';
 import { connect } from 'react-redux';
 import { addBlog } from '../../redux/actions/index';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import { Input } from 'react-native-elements';
 
 const NewPost = ({ blogData, addBlog }) => {
     const id = blogData.length + 1;
@@ -27,16 +29,14 @@ const NewPost = ({ blogData, addBlog }) => {
     };
     return (
         <View style={styles.bodyContainer}>
-            <TextInput
-                style={styles.input}
-                label="Title"
+            <Input
                 placeholder="Title"
-                name="title"
+                leftIcon={{ type: 'font-awesome', name: 'chevron-right' }}
                 value={title}
                 onChangeText={text => setTitle(text)}
             />
-            <TextInput
-                style={styles.input}
+            <Input
+                leftIcon={{ type: 'font-awesome', name: 'file-text-o' }}
                 multiline
                 numberOfLines={6}
                 name="body"
@@ -54,7 +54,9 @@ const NewPost = ({ blogData, addBlog }) => {
 
 const styles = StyleSheet.create({
     bodyContainer: {
-        marginTop: 25,
+        paddingTop: 25,
+        backgroundColor: 'white',
+        flex: 1,
     },
     input: {
         margin: 10,
